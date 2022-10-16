@@ -1,17 +1,27 @@
 <view class="my-play-container">
-<view class="play-img-container">
-<view class="play-img-box">
-<image src="{{searchSongImg.imgurl}}" class="song-img"></image>
-</view>
-</view>
-<view class="play-info-container">
-<view class="paly-info-box">
-<view class="song-name" style="font-size: 55rpx;margin-bottom: 25rpx;">{{searchInfoList.songname}}</view>
-<view class="singer-name" style="font-size: 30rpx; color: rgb(180, 180, 180);">{{
-  searchInfoList.singername}}-{{searchInfoList.album_name}}</view>
-</view>
-</view>
-<view class="play-btn-container">
-
-</view>
+  <view class="play-img-container">
+    <view class="play-img-box">
+      <image src="{{searchSongImg.imgurl}}" class="song-img"></image>
+    </view>
+  </view>
+  <view class="play-info-container">
+    <view class="paly-info-box">
+      <view class="song-name" style="font-size: 55rpx;margin-bottom: 25rpx;">{{searchInfoList.songname}}</view>
+      <view class="singer-name" style="font-size: 30rpx; color: rgb(180, 180, 180);">{{
+        searchInfoList.singername}}-{{searchInfoList.album_name}}</view>
+    </view>
+  </view>
+  <view class="play-btn-container">
+    <view class="play-btn-box">
+      <view class="progress">
+        <van-progress inactive percentage="50" stroke-width="8rpx" percentage="{{progress}}" show-pivot="{{true}}" />
+      </view>
+      <view class="btn-box">
+      <view class="play-btn" bindtap="onclick" >
+      <image class="tran" wx:if="{{activity==1}}" src="../../../images/tran.png"></image>
+      <image class="pause" wx:if="{{activity==0}}" src='../../../images/pause.png'></image>
+      </view>
+      </view>
+    </view>
+  </view>
 </view>

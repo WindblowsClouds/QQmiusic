@@ -22,10 +22,11 @@ Page({
       url: `/entrance/pages/${e.target.dataset.topage}/${e.target.dataset.topage}`,
     })
   },
-  //
-  /**
-   * 生命周期函数--监听页面加载
-   */
+  //刷新今日推荐
+  refreshSongs(){
+    console.log('1');
+    this.getRandomSongs({sort:'热歌榜',format:'json'})
+  },
  async onLoad(options) {
   this.storeBindings = createStoreBindings(this, {
     store, // 需要绑定的数据仓库

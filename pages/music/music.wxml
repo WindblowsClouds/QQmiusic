@@ -16,9 +16,11 @@
   </view>
   <view class="my-random-container">
     <view class="random-box">
-      <view class="random-text"> 今日推荐 <navigator class="more">更多
-          <van-icon name="arrow" />
-        </navigator>
+      <view class="random-text-box">
+        <text class="random-text"> 今日推荐</text>
+        <view class="refresh" bindtap="refreshSongs"><text class="refresh-text">换一换</text>
+          <image class="refresh-img" src="../../images/refresh.png"></image>
+        </view>
       </view>
       <view class="random-song">
         <view class="song-img-container">

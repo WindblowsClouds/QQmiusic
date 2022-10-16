@@ -40,3 +40,32 @@ background-color: rgb(37, 35, 35);
   margin: 0 75rpx;
   text-align: center;
 }
+.play-btn-box{
+  margin: 0 75rpx;
+}
+.btn-box{
+display: flex;
+justify-content: center;
+align-items: center;
+  height: 180rpx;
+  margin: 50rpx auto;
+}
+.play-btn{
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 69rpx;
+  border: 4rpx solid #2c2c2c;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tran{
+  margin-left: 10rpx;
+  width: 65rpx;
+  height: 65rpx;
+}
+.pause{
+  width: 70rpx;
+  height: 70rpx;
+}

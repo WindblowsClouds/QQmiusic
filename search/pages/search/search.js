@@ -99,7 +99,6 @@ Page({
   },
   //跳转播放界面
   goplay(e){
-    console.log(e.currentTarget.dataset.playinfo);
     wx.navigateTo({
       url: '/play/pages/play/play',
       success:(res)=>{

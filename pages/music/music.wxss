@@ -29,17 +29,34 @@ border-radius: 25rpx;
   padding: 20rpx;
   border:1rpx solid rgb(117, 117, 117,.2);
   border-radius: 25rpx;
-
   font-size: 36rpx;
   font-weight:550;
 }
 .random-text{
-  margin-left: 20rpx;
+  margin: 0 320rpx 0 20rpx;
 }
-.more{
-  float: right;
-  font-size: 30rpx;
-  color: #8e8e92;
+.random-text-box{
+  height:48rpx ;
+  padding: 10rpx 10rpx;
+  padding-bottom: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+.refresh{
+  width: 200rpx;
+  height: 48rpx;
+  display: flex;
+  align-items: center;
+}
+.refresh-text{
+  margin-right:20rpx ;
+  color: rgb(137, 151, 178);
+}
+.refresh-img{
+  width: 40rpx;
+  height: 48rpx;
 }
 .random-song{
   margin-top: 10rpx;
@@ -53,6 +70,7 @@ border-radius: 25rpx;
   width: 200rpx;
   height: 200rpx;
   padding: 20rpx;
+
 }
 .random-song-img{
   display: block;

@@ -55,7 +55,6 @@ const srequest=async (url,data)=>{
     data:data
   })
   return res
-
 }
 module.exports={
   //随机推荐
@@ -78,5 +77,7 @@ module.exports={
   getsearchSong:function(data){
     //data必须为对象
     return srequest('/api/v3/search/song',data)
-  }
+  },
+
+
 }
