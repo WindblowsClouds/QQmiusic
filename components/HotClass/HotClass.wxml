@@ -1,0 +1,25 @@
+
+<view class="my-hotclass-container">
+  <view class="hotclass-box">
+    <view class="hotclass-text"> {{recommendTtext}} <navigator class="more">更多
+        <van-icon name="arrow" />
+      </navigator>
+    </view>
+
+    <scroll-view class="hotclass-List" enable-flex="true" scroll-x="true">
+      <view class="hotclass-brick" wx:for="{{HotClassArr}}" wx:key="index">
+        <view>
+          <image class="hotclass-brick-img" src="{{item.bannerurl||HotClassArr[5].bannerurl}}"></image>
+          <view class="hotclass-brick-play">
+            <image class="brick-play" style="width: 20rpx;height: 20rpx; position: absolute; top: 6rpx; left: 1rpx;" src="../../images/play.png"></image>{{item.special_tag_id}}
+          </view>
+        </view>
+        <view class="hotclass-brick-intro">{{item.name}}</view>
+      </view>
+
+
+    </scroll-view>
+
+
+  </view>
+</view>

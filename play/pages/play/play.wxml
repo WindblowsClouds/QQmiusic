@@ -1,0 +1,17 @@
+<view class="my-play-container">
+<view class="play-img-container">
+<view class="play-img-box">
+<image src="{{searchSongImg.imgurl}}" class="song-img"></image>
+</view>
+</view>
+<view class="play-info-container">
+<view class="paly-info-box">
+<view class="song-name" style="font-size: 55rpx;margin-bottom: 25rpx;">{{searchInfoList.songname}}</view>
+<view class="singer-name" style="font-size: 30rpx; color: rgb(180, 180, 180);">{{
+  searchInfoList.singername}}-{{searchInfoList.album_name}}</view>
+</view>
+</view>
+<view class="play-btn-container">
+
+</view>
+</view>

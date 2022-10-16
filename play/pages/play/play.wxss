@@ -1,0 +1,42 @@
+.my-play-container{
+  height: 1220rpx;
+  background-image: linear-gradient(rgba(245,245,245,0),rgba(120,205,209,.4));
+}
+.play-img-container{
+  height: 575rpx;
+  margin: 75rpx;
+  border-radius: 45rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(104, 107, 107,.8);
+}
+.play-img-box{
+  width: 500rpx;
+  height: 500rpx;
+  border: 10rpx solid #a1a3a6;
+border-radius: 250rpx;
+display: flex;
+align-items: center;
+justify-content: center;
+background-color: rgb(37, 35, 35);
+
+}
+.song-img{
+  display: inline-block;
+  width: 300rpx;
+  height: 300rpx;
+  border-radius: 240rpx;
+  animation-name: ration;
+  animation-duration: 8s;
+  animation-timing-function: linear;
+}
+@keyframes ration{
+  from{transform: rotateZ(0deg);}
+  from{transform: rotateZ(-360deg);}
+}
+.paly-info-box{
+  height:200rpx;
+  margin: 0 75rpx;
+  text-align: center;
+}

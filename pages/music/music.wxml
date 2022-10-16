@@ -1,0 +1,37 @@
+<!--pages/music/music.wxml-->
+<view class="my-container">
+  <my-search></my-search>
+  <view class="my-entrance-container">
+    <view class="entrance-box">
+      <van-grid column-num="4" border="{{ false }}" bindtap="goentrance">
+        <van-grid-item use-slot wx:for="{{ enList}}" wx:key="index" data-topage="{{item.type}}">
+          <image class="img" src="{{item.img}}" data-topage="{{item.type}}" />
+          <text data-topage="{{item.type}}">{{item.name}}</text>
+        </van-grid-item>
+
+      </van-grid>
+
+    </view>
+
+  </view>
+  <view class="my-random-container">
+    <view class="random-box">
+      <view class="random-text"> 今日推荐 <navigator class="more">更多
+          <van-icon name="arrow" />
+        </navigator>
+      </view>
+      <view class="random-song">
+        <view class="song-img-container">
+          <image class="random-song-img" src="{{randomSongs.picurl}}"></image>
+        </view>
+        <view class="song-info-container">
+          <view class="song-name">{{randomSongs.name}}</view>
+          <text class="singer-name">{{randomSongs.artistsname}}</text>
+        </view>
+        <van-icon name="arrow" color="#8e8e92" />
+      </view>
+    </view>
+  </view>
+  <my-recommend HotSonglist='{{HotSonglist.list||[]}}' recommendTtext='{{recommendTtext[0]}}'></my-recommend>
+  <my-hotclass HotClass='{{HotClass.info||[]}}' recommendTtext='{{recommendTtext[1]}}'></my-hotclass>
+</view>

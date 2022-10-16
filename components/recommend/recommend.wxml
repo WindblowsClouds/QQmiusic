@@ -1,0 +1,25 @@
+
+<view class="my-recommend-container">
+  <view class="recommend-box">
+    <view class="recommend-text"> {{recommendTtext}} <navigator class="more">更多
+        <van-icon name="arrow" />
+      </navigator>
+    </view>
+
+    <scroll-view class="recommend-List" enable-flex="true" scroll-x="true">
+      <view class="recommend-brick" wx:for="{{HotSongArr}}" wx:key="index">
+        <view>
+          <image class="recommend-brick-img" src="{{item.imgurl}}"></image>
+          <view class="recommend-brick-play">
+            <image class="brick-play" style="width: 20rpx;height: 20rpx; position: absolute; top: 6rpx; left: 1rpx;" src="../../images/play.png"></image>{{item.playcount}}
+          </view>
+        </view>
+        <view class="recommend-brick-intro">{{item.specialname}}</view>
+      </view>
+
+
+    </scroll-view>
+
+
+  </view>
+</view>

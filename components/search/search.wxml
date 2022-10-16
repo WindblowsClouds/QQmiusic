@@ -1,0 +1,7 @@
+<!--components/search/search.wxml-->
+<view class="my-search-container" bindtap="goSearch">
+    <view class="search-box">
+      <van-icon name="search" size="45rpx" color="#cdcdcd" />
+      <text>搜索</text>
+    </view>
+  </view>

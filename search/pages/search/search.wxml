@@ -1,0 +1,44 @@
+<view class="my-container">
+<view class="my-search-container" >
+<view class="my-search-box">
+<view class="search-box">
+<input type="text" 	confirm-type="search" value="{{start}}" class="search-input" placeholder="请输入歌曲名" placeholder-style="font-weight: 400; margin-left:90rpx;" bindinput="getAssociate" bindconfirm="getSongs" />
+</view>
+</view>
+<!-- 取消按钮 -->
+<view class="btn-cancel-box">
+<van-button type="default" size="small" bind:click="cancle">取消</van-button>
+</view>
+</view>
+<view class="my-before-search" wx:if="{{curblur==0}}">
+<view class="my-before">
+<text style="font-weight: 600;font-size: 40rpx; ">历史搜索</text>
+<view class="btn-clear-box">
+<van-button type="default" size="small" bind:click="clear" >清空</van-button>
+</view>
+</view>
+<view class="before-search-box">
+<text class="history-box" wx:for="{{searchHistory}}" wx:key="index">{{item.keyword}}</text>
+</view>
+</view>
+<view class="my-associate-container" wx:if="{{curblur==1}}">
+<view style="margin-left: 20rpx; font-size: 35rpx; font-weight: 600;">搜索 “{{searchWord}}”</view>
+<view class="associate-box" wx:for="{{searchAssociateList}}" wx:key="index">
+  <van-icon name="search" size="45rpx" color="#cdcdcd" />
+  <text class="search-associate" style="margin-left: 30rpx; font-size: 35rpx;">{{item.keyword}}</text>
+</view>
+</view>
+<view class="my-search-songs" wx:if="{{curblur==2}}" >
+<view class="songs-box">
+<view class="search-bar-box">
+  <view class="songs-bar">歌曲</view>
+  </view>
+<view class="search-songs-box">
+<view class="songs-name-box" wx:for="{{searchSongList}}" wx:key="index" bindtap="goplay" data-playinfo="{{item}}">
+<view class="search-song-name" style="font-size: 30rpx; font-weight: 400;">{{item.songname}}</view>
+<text class="search-song-info" style="font-size: 25rpx; color: #cdcdcd;" >歌手:{{item.singername}}--专辑:{{item.album_name}}</text>
+</view>
+</view>
+</view>
+</view>
+</view>

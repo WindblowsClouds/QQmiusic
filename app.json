@@ -1,0 +1,70 @@
+{
+  "pages":[
+    "pages/music/music",
+    "pages/mvideo/mvideo",
+    "pages/user/user"
+  ],
+  "subpackages": [
+    {
+      "root": "search",
+      "pages": [
+        "pages/search/search"
+      ]
+    },
+    {
+      "root": "entrance",
+      "pages": [
+        "pages/newsong/newsong",
+        "pages/singer/singer",
+        "pages/ranking/ranking",
+        "pages/songlist/songlist"
+      ]
+    },
+    {
+      "root": "play",
+      "pages": [
+        "pages/play/play"
+      ]
+    }
+  ],
+  "tabBar": {
+    "custom": true,
+    "list": [
+      {
+      "pagePath": "pages/music/music",
+      "text": "音乐",
+      "iconPath": "./images/nmusic.png",
+      "selectedIconPath": "./images/music.png"
+    },
+    {
+      "pagePath": "pages/mvideo/mvideo",
+      "text": "视频",
+      "iconPath": "./images/nvideo.png",
+      "selectedIconPath": "./images/video.png"
+    },
+    {
+      "pagePath": "pages/user/user",
+      "text": "我的",
+      "iconPath": "./images/nuser.png",
+      "selectedIconPath": "./images/user.png"
+    }
+  ]
+  },
+
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#f5f5f5",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle":"black"
+  },
+  "usingComponents": {
+    "my-search":"./components/search/search",
+    "my-recommend":"/components/recommend/recommend",
+    "my-hotclass":"/components/HotClass/HotClass",
+    "van-tabbar": "@vant/weapp/tabbar/index",
+    "van-tabbar-item": "@vant/weapp/tabbar-item/index",
+    "van-icon": "@vant/weapp/icon/index",
+    "van-button": "@vant/weapp/button/index"
+  },
+  "sitemapLocation": "sitemap.json"
+}
