@@ -1,28 +1,31 @@
-.my-play-container{
-  height: 1220rpx;
-  background-image: linear-gradient(rgba(245,245,245,0),rgba(120,205,209,.4));
+.my-play-container {
+height: 1400rpx;
+  background-image: linear-gradient(rgba(245, 245, 245, 0), rgba(120, 205, 209, .4));
 }
-.play-img-container{
+
+.play-img-container {
   height: 575rpx;
   margin: 75rpx;
   border-radius: 45rpx;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(104, 107, 107,.8);
+  background-color: rgba(104, 107, 107, .8);
 }
-.play-img-box{
+
+.play-img-box {
   width: 500rpx;
   height: 500rpx;
   border: 10rpx solid #a1a3a6;
-border-radius: 250rpx;
-display: flex;
-align-items: center;
-justify-content: center;
-background-color: rgb(37, 35, 35);
+  border-radius: 250rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(37, 35, 35);
 
 }
-.song-img{
+
+.song-img {
   display: inline-block;
   width: 300rpx;
   height: 300rpx;
@@ -31,41 +34,72 @@ background-color: rgb(37, 35, 35);
   animation-duration: 8s;
   animation-timing-function: linear;
 }
-@keyframes ration{
-  from{transform: rotateZ(0deg);}
-  from{transform: rotateZ(-360deg);}
+
+@keyframes ration {
+  from {
+    transform: rotateZ(0deg);
+  }
+
+  from {
+    transform: rotateZ(-360deg);
+  }
 }
-.paly-info-box{
-  height:200rpx;
+
+.paly-info-box {
+  height: 200rpx;
   margin: 0 75rpx;
   text-align: center;
 }
-.play-btn-box{
+.time-box{
+  height: 50rpx;
+  margin-top: 10rpx;
+  display: flex;
+  color: #a1a3a6;
+  justify-content: space-between;
+}
+.play-btn-box {
   margin: 0 75rpx;
 }
-.btn-box{
-display: flex;
-justify-content: center;
-align-items: center;
+
+.btn-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 180rpx;
-  margin: 50rpx auto;
+  margin: 15rpx auto;
 }
-.play-btn{
+
+.play-btn {
   width: 130rpx;
   height: 130rpx;
   border-radius: 69rpx;
-  border: 4rpx solid #2c2c2c;
+  border: 6rpx solid #2c2c2c;
   background-color: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.tran{
+
+.tran {
   margin-left: 10rpx;
   width: 65rpx;
   height: 65rpx;
 }
-.pause{
+
+.pause {
   width: 70rpx;
   height: 70rpx;
+}
+.next-btn{
+  width: 100rpx;
+  height: 100rpx;
+  margin-left: 80rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.next{
+  width: 75rpx;
+  height: 75rpx;
 }

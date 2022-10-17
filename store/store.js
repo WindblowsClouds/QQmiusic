@@ -26,15 +26,7 @@ export const store=observable({
       return this.searchSong.data.data.info||[]
     }
   },
-  //得到搜索歌曲对应图片
-  get searchSongImg(){
-    if(this.searchSong.data.relative.singer){
-      return this.searchSong.data.relative.singer[0]||{}
-    }else{
-      //解决当singer图片为空时报错
-      return {imgurl:'../../../images/wind.png'}
-    }
-  },
+
 
   //action,用来修改store中的值
   updateactiveIndex:action(function(index){

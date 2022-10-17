@@ -12,7 +12,6 @@
       </van-grid>
 
     </view>
-
   </view>
   <view class="my-random-container">
     <view class="random-box">
@@ -22,7 +21,7 @@
           <image class="refresh-img" src="../../images/refresh.png"></image>
         </view>
       </view>
-      <view class="random-song">
+      <view class="random-song" bindtap="goplay" >
         <view class="song-img-container">
           <image class="random-song-img" src="{{randomSongs.picurl}}"></image>
         </view>

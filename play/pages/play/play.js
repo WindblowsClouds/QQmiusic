@@ -1,6 +1,8 @@
 import {createStoreBindings} from "mobx-miniprogram-bindings";
 import{store} from "../../../store/store"
 const API=require('../../../API/api')
+import tool from '../../../utils/tool'
+const backgroundAudioManager = wx.getBackgroundAudioManager()
 
 Page({
 
@@ -9,33 +11,66 @@ Page({
    */
   data: {
     searchInfoList:{},
+    //'1'表示暂停，0，表示暂停
     activity:1,
-    progress:0
+    progress:0,
+    //音乐当前播放秒数
+    cur:'',
+    //音乐总时长
+    dur:''
 
 
   },
-  onclick(){
-    const backgroundAudioManager = wx.getBackgroundAudioManager()
-    this.setData({
-      activity:this.data.activity==1?0:1
-    })
-    backgroundAudioManager.title='十年'
-    backgroundAudioManager.src = 'http://fsmobile.hw.kugou.com/202210162024/c5c8d6a634a04e86e460b936f27e14fd/v2/34c7777fffdd4fdf04e02af1f6857ca4/G083/M08/00/04/84YBAFhks0aAYGsBADl8RUL2DXQ825.mp3'
+  //将音乐播放包装
+  musicAudio(){
+    backgroundAudioManager.title=this.data.searchInfoList.name
+    backgroundAudioManager.src = this.data.searchInfoList.url
     if(this.data.activity){
       backgroundAudioManager.pause()
     }else{
       backgroundAudioManager.play()
     }
-   
-    console.log(backgroundAudioManager.currentTime);
+    //通过音乐进度更新计算进度条
     backgroundAudioManager.onTimeUpdate(()=>{
+      //获取音乐当前播放时间与总时间，计算进度条进度
+      let dur=backgroundAudioManager.duration
       let cur=backgroundAudioManager.currentTime
-      let now=parseInt(cur/235*100)
+      if(cur&&dur){
+        this.setData({
+          cur:tool.formatSeconds(cur),
+          dur:tool.formatSeconds(dur)
+        })
+        let progress=parseInt(cur/dur*100)
+        this.setData({
+          progress:progress
+        })
+      }
+    })
+    backgroundAudioManager.onEnded(()=>{
       this.setData({
-        progress:now
+        activity:1
       })
     })
-
+    //监听播放错误时间
+    backgroundAudioManager.onError(()=>{
+      Notify('通知内容');
+    })
+  },
+  //随机下一首
+  randomnext(){
+    this.getRandomSongs({sort:'热歌榜',format:'json'})
+    this.setData({
+      searchInfoList:this.data.randomSongs
+    })
+    backgroundAudioManager.stop()
+    this.musicAudio()
+  },
+  onclick(){
+    this.setData({
+      activity:this.data.activity==1?0:1
+    })
+    this.musicAudio()
+    
   },
 
   /**
@@ -45,20 +80,20 @@ Page({
     this.storeBindings = createStoreBindings(this, {
       store, // 需要绑定的数据仓库
       fields: {
-        searchSongImg:()=>store.searchSongImg ||{},
-      }
+        randomSongs:()=>store.randomSongs
+      },
+      actions:['getRandomSongs']
     })
     //监听路由跳转的事件，获取数据
     const eventChannel = this.getOpenerEventChannel()
+   
      if(eventChannel.on){
-      eventChannel.on('acceptDataFromOpenerPage', (data)=>{
+      eventChannel.on('acceptDataFromMusicPage', (data)=>{
         this.setData({
           searchInfoList:data.data
         })
       })
      }
-
-
   },
 
 

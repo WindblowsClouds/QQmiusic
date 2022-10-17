@@ -1,26 +1,31 @@
 <view class="my-play-container">
   <view class="play-img-container">
     <view class="play-img-box">
-      <image src="{{searchSongImg.imgurl}}" class="song-img"></image>
+      <image src="{{searchInfoList.picurl}}" class="song-img"></image>
     </view>
   </view>
   <view class="play-info-container">
     <view class="paly-info-box">
-      <view class="song-name" style="font-size: 55rpx;margin-bottom: 25rpx;">{{searchInfoList.songname}}</view>
+      <view class="song-name" style="font-size: 50rpx;margin-bottom: 25rpx;">{{searchInfoList.name}}</view>
       <view class="singer-name" style="font-size: 30rpx; color: rgb(180, 180, 180);">{{
-        searchInfoList.singername}}-{{searchInfoList.album_name}}</view>
+        searchInfoList.artistsname}}</view>
     </view>
   </view>
   <view class="play-btn-container">
     <view class="play-btn-box">
       <view class="progress">
         <van-progress inactive percentage="50" stroke-width="8rpx" percentage="{{progress}}" show-pivot="{{true}}" />
+        <view class="time-box">
+        <view class="cur">{{cur}}</view>
+        <view class="dur">{{dur}}</view>
+        </view>
       </view>
       <view class="btn-box">
       <view class="play-btn" bindtap="onclick" >
       <image class="tran" wx:if="{{activity==1}}" src="../../../images/tran.png"></image>
       <image class="pause" wx:if="{{activity==0}}" src='../../../images/pause.png'></image>
       </view>
+      <view class="next-btn" bindtap="randomnext"><image class="next" src="../../../images/next.png" ></image></view>
       </view>
     </view>
   </view>

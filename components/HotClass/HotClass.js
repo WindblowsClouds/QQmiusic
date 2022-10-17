@@ -24,8 +24,7 @@ Component({
         this.setData({
           HotClassArr:this.data.HotClass
         })
-        console.log(this
-          .data.HotClassArr);
+
       }
     }
   },

@@ -24,8 +24,17 @@ Page({
   },
   //刷新今日推荐
   refreshSongs(){
-    console.log('1');
     this.getRandomSongs({sort:'热歌榜',format:'json'})
+  },
+  //跳转播放界面
+  goplay(){
+    wx.navigateTo({
+      url: '/play/pages/play/play',
+      success: (res)=> {
+        // 通过 eventChannel 向被打开页面传送数据
+        res.eventChannel.emit('acceptDataFromMusicPage', {data:this.data.randomSongs})
+      }
+    })
   },
  async onLoad(options) {
   this.storeBindings = createStoreBindings(this, {

@@ -25,8 +25,27 @@ function debounce(fn, interval) {
     }, gapTime);
   };
 }
+//返回音乐分钟计时
+function formatSeconds(value){
+  let secondTime = parseInt(value);
+  var minuteTime = 0;
+  if(value>=60){
+      minuteTime=parseInt(value/60)
+      secondTime=parseInt(value%60)
+      if(secondTime<10){
+          secondTime='0'+secondTime
+      }
+      return minuteTime+':'+secondTime
+  }else{
+      if(secondTime<10){
+          secondTime='0'+secondTime
+      }
+      return '00:'+secondTime
+  }
+ } 
  
 export default {
   throttle,
-  debounce
+  debounce,
+  formatSeconds
 };
