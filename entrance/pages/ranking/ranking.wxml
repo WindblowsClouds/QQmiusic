@@ -1,2 +1,18 @@
-<!--entrance/pages/ranking/ranking.wxml-->
-<text>entrance/pages/ranking/ranking.wxml</text>
+<view class="my-ranking-container">
+  <view class="my-ranking-box">
+    <text class="rankink-text" style="margin-left: 30rpx; font-size: 45rpx; font-weight: 550;">榜单</text>
+    <view class="ranking-box" wx:for="{{rankingList}}" wx:key="index">
+      <view class="ranking-img-box">
+        <image src="../../../images/wind.png" class="ranking-img"></image>
+      </view>
+      <view class="ranking-info">
+        <view class="title"><text style="font-weight: 550; font-size: 35rpx;">{{item.rankname}}</text> _ <text style="font-size: 25rpx; color: #cdcdcd;">{{item.update_frequency}}更新</text></view>
+        <view class="songsrank" wx:for="{{item.songinfo}}" wx:key="index" style="font-size: 28rpx;overflow: hidden; ">
+        <text style="font-weight: 550;">{{index+1}}.</text>
+        <text style="font-size: 27rpx; color: #b1a9a9; white-space: nowrap; " >{{item.songname}}</text>
+        </view>
+      </view>
+
+    </view>
+  </view>
+</view>

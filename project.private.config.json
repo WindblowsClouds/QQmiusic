@@ -21,6 +21,13 @@
           "query": "",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "",
+          "pathName": "entrance/pages/ranking/ranking",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

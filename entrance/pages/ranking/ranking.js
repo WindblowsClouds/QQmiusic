@@ -1,10 +1,13 @@
 // entrance/pages/ranking/ranking.js
+import {createStoreBindings} from "mobx-miniprogram-bindings";
+import{store} from "../../../store/store"
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+  
 
   },
 
@@ -12,6 +15,16 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad(options) {
+    this.storeBindings=createStoreBindings(this,{
+      store,
+      fields:{
+        ranking:()=>store.ranking,
+        rankingList:()=>store.rankingList
+      },
+      actions:['getRanking']
+    })
+    this.getRanking({withsong:1})
+
 
   },
 

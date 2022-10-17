@@ -90,22 +90,36 @@ Page({
       fields: {
         searchAssociateList:()=>store.searchAssociateList ||[],
         searchSongList:()=>store.searchSongList ||[],
-        searchSong:()=>store.searchSong
+        searchSong:()=>store.searchSong,
+        randomSongs:()=>store.randomSongs
       }, 
-      actions: {getsearchAssociate:'getsearchAssociate',getsearchSong:'getsearchSong'}
+      actions: {
+        getsearchAssociate:'getsearchAssociate',
+        getsearchSong:'getsearchSong',
+        getRandomSongs:'getRandomSongs'}
     })
     //更新搜索历史
     this.updateSearchHistory()
+
+    this.getRandomSongs({sort:'热歌榜',format:'json'})
   },
   //跳转播放界面
-  goplay(e){
+  goplay(){
     wx.navigateTo({
       url: '/play/pages/play/play',
-      success:(res)=>{
-        res.eventChannel.emit('acceptDataFromOpenerPage',{data:e.currentTarget.dataset.playinfo})
+      success: (res)=> {
+        // 通过 eventChannel 向被打开页面传送数据
+      res.eventChannel.emit('acceptDataFromSearchPage', {data:this.data.randomSongs})
       }
- 
     })
+  },
+  //清空历史搜索
+  clearHistorSearch(){
+    wx.clearStorageSync('searchHistroyList')
+    this.setData({
+      searchHistory:[]
+    })
+    console.log('1');
   },
 
 

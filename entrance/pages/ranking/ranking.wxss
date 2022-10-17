@@ -1,1 +1,38 @@
-/* entrance/pages/ranking/ranking.wxss */
+.my-ranking-box{
+  height: 800rpx;
+}
+.ranking-box{
+  height: 250rpx;
+  margin: 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 25rpx;
+  background-color: #fff;
+}
+.ranking-img{
+margin-top: 10rpx;
+  width: 240rpx;
+  height: 240rpx;
+  border-radius: 25rpx;
+}
+.ranking-info{
+  height: 270rpx;
+  width: 415rpx;
+  border-radius: 25rpx;
+  display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+
+}
+.title{
+ 
+  width: 400rpx;
+}
+.songsrank{
+  height: 40rpx;
+  width: 400rpx;
+  margin-top: 25rpx;
+
+}

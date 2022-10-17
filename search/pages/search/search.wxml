@@ -14,7 +14,7 @@
 <view class="my-before">
 <text style="font-weight: 600;font-size: 40rpx; ">历史搜索</text>
 <view class="btn-clear-box">
-<van-button type="default" size="small" bind:click="clear" >清空</van-button>
+<van-button type="default" size="small" bind:click="clearHistorSearch" >清空</van-button>
 </view>
 </view>
 <view class="before-search-box">

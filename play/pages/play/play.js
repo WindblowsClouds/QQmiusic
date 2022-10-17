@@ -86,9 +86,14 @@ Page({
     })
     //监听路由跳转的事件，获取数据
     const eventChannel = this.getOpenerEventChannel()
-   
      if(eventChannel.on){
       eventChannel.on('acceptDataFromMusicPage', (data)=>{
+        this.setData({
+          searchInfoList:data.data
+        })
+      })
+      //歌曲搜索界面路由跳转
+      eventChannel.on('acceptDataFromSearchPage',(data)=>{
         this.setData({
           searchInfoList:data.data
         })

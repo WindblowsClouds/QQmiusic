@@ -29,6 +29,20 @@ const krequest= async (url,data)=>{
     },
   }) 
   return res.data
+};const rrequest= async (url,data)=>{
+  let _url=base_url+url;
+  let {data:res}= await wx.p.request({
+    url:_url,
+    method:'GET',
+    data:data,
+    header: {
+      //设置参数内容类型为x-www-form-urlencoded
+      'content-type':'application/x-www-form-urlencoded',
+      'Accept': 'application/json'
+    }
+
+  }) 
+  return res
 };
 //搜索联想
 const ass_url="http://msearchcdn.kugou.com"
@@ -78,6 +92,10 @@ module.exports={
     //data必须为对象
     return srequest('/api/v3/search/song',data)
   },
+  //请求排行版数据
+  reqRanking:function(data){
+    return rrequest('/v3/rank/list',data)
+  }
 
 
 }

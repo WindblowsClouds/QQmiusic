@@ -12,6 +12,8 @@ export const store=observable({
   searchAssociateListStr:'',
   //搜索歌曲列表
   searchSong:{},
+  //排行版数据
+  ranking:{},
   //处理json数据
   get searchAssociateList(){
     let data=this.searchAssociateListStr.replace('<!--KG_TAG_RES_START-->','').replace('<!--KG_TAG_RES_END-->','')
@@ -24,6 +26,12 @@ export const store=observable({
   get searchSongList(){
     if(!Object.keys(this.searchSong).length==0){
       return this.searchSong.data.data.info||[]
+    }
+  },
+  //简化处理ranking
+  get rankingList(){
+    if(!Object.keys(this.ranking).length==0){
+      return this.ranking.data.info
     }
   },
 
@@ -51,6 +59,10 @@ export const store=observable({
   //歌曲搜索
   getsearchSong:action(async function(data){
     this.searchSong=(await API.getsearchSong(data))||{}
+  }),
+  //排行版数据
+  getRanking:action(async function (data) {
+   this.ranking=(await API.reqRanking(data))||{}
   })
   
 })
